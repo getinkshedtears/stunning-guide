@@ -1,0 +1,426 @@
+$color-main = rgba(32, 110, 225, 1)
+$color-contrast = rgba(255, 166, 15, 1)
+$default-space = 15px
+$default-transition = .4s ease all
+$default-border = 2px solid black
+$default-radius = 20%
+
+hover-grow()
+  transition: $default-transition
+  &:hover
+    transform: scale(1.2, 1.2)
+
+vhcenter($width, $height)
+  width: $width
+  height: $height
+  top: 'calc(50% - %s)' % ($height / 2)
+  left: 'calc(50% - %s)' % ($width /2)
+  
+valign()
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+  
+closeButton(p)
+  position: absolute
+  width: p
+  height: p
+  right: -(p/3)
+  top: -(p/3)
+  background: black
+  color: white
+  border:2px solid white
+  border-radius: 50%
+  text-align: center
+  hover-grow()
+  &:after
+    font-size: p * .9
+    content 'X'
+
+html, body
+  margin: 0
+  padding: 0
+
+body
+  background: $color-main
+  
+a
+  text-decoration: none
+  
+.wrapper-login
+  display: inline
+  float: right
+  margin: $default-space
+  text-align: right
+  cursor: default
+  & a
+    text-decoration: none
+    color: white
+    cursor: default
+  & .link
+    display: inline
+    color: white
+    text-decoration: none
+    transition: $default-transition
+    margin-left: $default-space
+    margin-right: $default-padding
+    &:hover
+      font-size: 1.25em
+    
+.wrapper-main
+  background: white
+  position: fixed
+  height: 85%
+  width: 75%
+  margin-left: 12.5%
+  top: 14%
+  border: $default-border
+  
+.wrapper-votesView
+  position: absolute
+  width: 75%
+  height: 90%
+  bottom: 0
+  left: 12.5%
+  text-align: center
+  
+.wrapper-votesSort
+  color: $color-contrast
+  margin: $default-space
+  width: 100%
+  height: 20px
+  top: 0
+  text-align: center
+  cursor: pointer
+  & .sortBy-inactive
+    display: inline
+    margin: $default-space
+    transition: $default-transition
+  & .sortBy-active
+    display: inline
+    font-size: 1.5em
+    margin: $default-space
+    transition: $default-transition
+
+.wrapper-votesWindow
+  position: absolute
+  left: 10%
+  width: 80%
+  height: calc(100% - 40px)
+  top: 40px
+  overflow-y: scroll
+  
+.wrapper-voteStrip
+  position: relative
+  width: 70%;
+  margin: $default-space
+  margin-left: 15%
+  background-color: $color-contrast
+  padding: 20px
+  hover-grow()
+  color: white
+  font-size: 1.5em
+  border: 2px solid black
+  
+.wrapper-voteStrip-small
+  position: relative
+  width: 50%;
+  margin: $default-space
+  margin-left: 25%
+  background-color: $color-contrast
+  padding: 10px
+  text-align: center
+  border: 2px solid black
+  & .close-button
+    closeButton(20px)
+  & a
+    text-decoration: none
+    color: white
+    font-size: 1.25em
+  hover-grow()
+  
+.screen
+  position: fixed
+  width: 100%
+  height: 100%
+  background-color: rgba(255, 255, 255, .5)
+  z-index: 2
+  
+.wrapper-popup
+  position: fixed
+  vhcenter(50%, 80%)
+  background: white
+  border: $default-border
+  z-index: 10
+  & .close-button
+    closeButton(75px)
+
+.wrapper-login-register
+  & .title
+    padding-top: def
+    width: 100%
+    font-size: 2em
+    text-align: center
+    color: $color-contrast
+  & .facebook
+    top: calc(50% - 100px)
+    text-align: center
+    padding: $default-space
+    margin: $default-space
+    & img
+      max-width: 200px
+
+#loginForm, #registerForm
+  position: absolute
+  width: 75%
+  left: 12.5%
+  height: 50%
+  top: 25%
+  text-align: center
+  & input
+    padding: $default-space
+    margin: $default-space
+    width: 50%
+  
+.button
+  display: inline-block
+  font-size: 2em
+  background-color: $color-contrast
+  border: $default-border
+  border-radius: $default-radius
+  padding: $default-space
+  hover-grow()
+  
+.create-button
+  position: absolute
+  left: -20px
+  top: -20px
+  height: 100px
+  width: 100px
+  color: white
+  background-color: $color-contrast
+  border: 2px solid white
+  border-radius: 50%
+  font-size: 85px
+  text-align: center
+  hover-grow()
+  
+.wrapper-create
+  text-align: center
+  & .wrapper-title
+    width: 80%
+    margin-left: 10%
+    & input
+      width: 80%
+      margin: $default-space
+      padding: $default-space
+      text-align: center
+      font-size: 2em
+  & .button
+    color: white
+    padding: 5px
+    margin: 5px
+    position: relative
+    top: 50%
+    font-size: 1.25em
+  & .wrapper-submit
+    position: absolute
+    width: 100%
+    bottom: 0
+
+
+.things-window
+  position: absolute
+  width: 80%
+  left: 10%
+  padding: 10px
+  height: 40%;
+  overflow-y: scroll
+  & input
+    width: 50%
+    padding: 5px
+    margin: 5px
+    
+.vote_title
+  text-align: center
+  & .title
+    font-size: 2.5em
+    display:block
+  & .author
+    padding-bottom: 50px
+    display: block
+  
+  
+.voteView-left
+  position: absolute
+  width: 50%
+  height: calc(100% - 100px)
+  text-align: center
+  & select
+    display: block
+    width: 50%
+    margin-left: 25%
+    height: 30px
+    margin-top: $default-space
+  & .cast
+    font-size: 1.5em
+  & .share
+    width: 100%
+    height: 20px;
+    margin-top: $default-space
+    font-size: .5em
+    
+.share-to-facebook
+  font-size: 1.75em
+  background: blue
+  display: inline-block
+  padding: $default-space
+  color: white
+  hover-grow()
+  cursor: pointer
+
+.voteView-right
+  position: absolute
+  border-left: 2px solid black
+  width: 50%
+  height: calc(100% - 20px)
+  overflow-y: hidden
+  right: 0
+  
+.graph-wrapper
+  position: absolute
+  vhcenter(300px, 300px)
+  
+.vote-button
+  background-color: $color-contrast
+  border-radius: $default-radius
+  color: white
+  display: inline-block
+  padding: $default-space
+  margin: $default-space
+  hover-grow()
+  
+.user-wrapper
+  width: 80%
+  margin-left: 10%
+  margin-top: $default-space
+  text-align: center
+  & .header
+    font-size: 2em
+    padding-bottom: $default-space
+  & .votes-wrapper
+    overflow-y: scroll
+    height: 90%
+
+.stat
+  font-size: 1.5em
+  text-align: left
+  margin-bottom: $default-space
+  & .label
+    font-size: .75em
+    color: $color-contrast
+  
+.title-header
+  z-index: -1
+  position: absolute
+  width: 100%
+  text-align: center
+  font-size: 4em
+  padding-top: $default-space
+  padding-bottom: $default-space
+  & a
+    text-decoration: none
+    color: white
+    
+.edit-wrapper
+  position: absolute
+  bottom: 40px
+  & .edit-button
+    padding: $default-space
+    margin: $default-space
+    border: 2px solid black
+    border-radius: $default-radius
+    cursor: default
+      
+.edit-button
+  margin-left: $default-space
+  color: white
+  border: 2px solid black
+  border-radius: $default-radius
+  padding: 5px
+  background-color: $color-contrast
+  cursor: default
+  display: inline-block
+  hover-grow()
+  
+.addView-wrapper
+  & input[type=text]
+    width: 50%
+    height: 30px
+    margin-left: 25%
+  & input[type=submit]
+    background: $color-contrast
+    padding:$default-space
+    border-radius: $default-radius
+    color: white
+    font-size: 1.5em
+  & .header
+    padding: $default-space
+    color: $color-contrast
+    text-align: center
+    font-size: 2em
+  & .bottom
+    position: absolute
+    bottom: 0px
+    width: 100%
+  & .scroll
+    position: absolute
+    width: 100%
+    height: 75%
+    overflow-y: auto
+    
+.option-wrapper
+  padding: $default-space
+  text-align:center
+  font-size: 1.5em
+  & .text
+    display: inline
+    &:hover
+      text-decoration: line-through
+      cursor: default
+
+.remove-button
+  position: absolute
+  background: $color-contrast
+  border: 2px solid black
+  display: inline
+  border-radius: $default-radius
+  padding-left: 10px
+  padding-right: 10px
+  right: 10%
+  &:after
+    font-size: 12px
+    content 'X'
+    
+.delete-wrapper
+  position: absolute
+  bottom: 20px
+  & .edit-button
+    background-color: $color-contrast
+    color: white
+    padding: $default-space
+    margin: $default-space
+    border: 2px solid black
+    border-radius: $default-radius
+    cursor: default
+      
+.login
+  display: inline-block
+  & img
+    height: 25px
+    padding-left: $default-space
+    padding-right: $default-space
+    cursor: pointer
+    hover-grow()

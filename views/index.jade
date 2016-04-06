@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #anchor
+  if vote
+    script(type='text/javascript').
+      var voteID = "#{vote}";
+  else
+    script(type='text/javascript').
+      var voteID = null;
+  if userState
+    script(type = 'text/javascript').
+      var userState = true;
+  else
+    script(type = 'text/javascript').
+      var userState = null;
+  script(src = '/javascripts/index.js')

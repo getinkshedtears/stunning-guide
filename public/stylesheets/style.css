@@ -1,0 +1,484 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #206ee1;
+}
+a {
+  text-decoration: none;
+}
+.wrapper-login {
+  display: inline;
+  float: right;
+  margin: 15px;
+  text-align: right;
+  cursor: default;
+}
+.wrapper-login a {
+  text-decoration: none;
+  color: #fff;
+  cursor: default;
+}
+.wrapper-login .link {
+  display: inline;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.4s ease all;
+  margin-left: 15px;
+  margin-right: $default-padding;
+}
+.wrapper-login .link:hover {
+  font-size: 1.25em;
+}
+.wrapper-main {
+  background: #fff;
+  position: fixed;
+  height: 85%;
+  width: 75%;
+  margin-left: 12.5%;
+  top: 14%;
+  border: 2px solid #000;
+}
+.wrapper-votesView {
+  position: absolute;
+  width: 75%;
+  height: 90%;
+  bottom: 0;
+  left: 12.5%;
+  text-align: center;
+}
+.wrapper-votesSort {
+  color: #ffa60f;
+  margin: 15px;
+  width: 100%;
+  height: 20px;
+  top: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.wrapper-votesSort .sortBy-inactive {
+  display: inline;
+  margin: 15px;
+  transition: 0.4s ease all;
+}
+.wrapper-votesSort .sortBy-active {
+  display: inline;
+  font-size: 1.5em;
+  margin: 15px;
+  transition: 0.4s ease all;
+}
+.wrapper-votesWindow {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: calc(100% - 40px);
+  top: 40px;
+  overflow-y: scroll;
+}
+.wrapper-voteStrip {
+  position: relative;
+  width: 70%;
+  margin: 15px;
+  margin-left: 15%;
+  background-color: #ffa60f;
+  padding: 20px;
+  transition: 0.4s ease all;
+  color: #fff;
+  font-size: 1.5em;
+  border: 2px solid #000;
+}
+.wrapper-voteStrip:hover {
+  transform: scale(1.2, 1.2);
+}
+.wrapper-voteStrip-small {
+  position: relative;
+  width: 50%;
+  margin: 15px;
+  margin-left: 25%;
+  background-color: #ffa60f;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #000;
+  transition: 0.4s ease all;
+}
+.wrapper-voteStrip-small .close-button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -6.666666666666667px;
+  top: -6.666666666666667px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.4s ease all;
+}
+.wrapper-voteStrip-small .close-button:hover {
+  transform: scale(1.2, 1.2);
+}
+.wrapper-voteStrip-small .close-button:after {
+  font-size: 18px;
+  content: 'X';
+}
+.wrapper-voteStrip-small a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.25em;
+}
+.wrapper-voteStrip-small:hover {
+  transform: scale(1.2, 1.2);
+}
+.screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 2;
+}
+.wrapper-popup {
+  position: fixed;
+  width: 50%;
+  height: 80%;
+  top: calc(50% - 40%);
+  left: calc(50% - 25%);
+  background: #fff;
+  border: 2px solid #000;
+  z-index: 10;
+}
+.wrapper-popup .close-button {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  right: -25px;
+  top: -25px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  transition: 0.4s ease all;
+}
+.wrapper-popup .close-button:hover {
+  transform: scale(1.2, 1.2);
+}
+.wrapper-popup .close-button:after {
+  font-size: 67.5px;
+  content: 'X';
+}
+.wrapper-login-register .title {
+  padding-top: def;
+  width: 100%;
+  font-size: 2em;
+  text-align: center;
+  color: #ffa60f;
+}
+.wrapper-login-register .facebook {
+  top: calc(50% - 100px);
+  text-align: center;
+  padding: 15px;
+  margin: 15px;
+}
+.wrapper-login-register .facebook img {
+  max-width: 200px;
+}
+#loginForm,
+#registerForm {
+  position: absolute;
+  width: 75%;
+  left: 12.5%;
+  height: 50%;
+  top: 25%;
+  text-align: center;
+}
+#loginForm input,
+#registerForm input {
+  padding: 15px;
+  margin: 15px;
+  width: 50%;
+}
+.button {
+  display: inline-block;
+  font-size: 2em;
+  background-color: #ffa60f;
+  border: 2px solid #000;
+  border-radius: 20%;
+  padding: 15px;
+  transition: 0.4s ease all;
+}
+.button:hover {
+  transform: scale(1.2, 1.2);
+}
+.create-button {
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  height: 100px;
+  width: 100px;
+  color: #fff;
+  background-color: #ffa60f;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  font-size: 85px;
+  text-align: center;
+  transition: 0.4s ease all;
+}
+.create-button:hover {
+  transform: scale(1.2, 1.2);
+}
+.wrapper-create {
+  text-align: center;
+}
+.wrapper-create .wrapper-title {
+  width: 80%;
+  margin-left: 10%;
+}
+.wrapper-create .wrapper-title input {
+  width: 80%;
+  margin: 15px;
+  padding: 15px;
+  text-align: center;
+  font-size: 2em;
+}
+.wrapper-create .button {
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
+  position: relative;
+  top: 50%;
+  font-size: 1.25em;
+}
+.wrapper-create .wrapper-submit {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.things-window {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  padding: 10px;
+  height: 40%;
+  overflow-y: scroll;
+}
+.things-window input {
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+}
+.vote_title {
+  text-align: center;
+}
+.vote_title .title {
+  font-size: 2.5em;
+  display: block;
+}
+.vote_title .author {
+  padding-bottom: 50px;
+  display: block;
+}
+.voteView-left {
+  position: absolute;
+  width: 50%;
+  height: calc(100% - 100px);
+  text-align: center;
+}
+.voteView-left select {
+  display: block;
+  width: 50%;
+  margin-left: 25%;
+  height: 30px;
+  margin-top: 15px;
+}
+.voteView-left .cast {
+  font-size: 1.5em;
+}
+.voteView-left .share {
+  width: 100%;
+  height: 20px;
+  margin-top: 15px;
+  font-size: 0.5em;
+}
+.share-to-facebook {
+  font-size: 1.75em;
+  background: #00f;
+  display: inline-block;
+  padding: 15px;
+  color: #fff;
+  transition: 0.4s ease all;
+  cursor: pointer;
+}
+.share-to-facebook:hover {
+  transform: scale(1.2, 1.2);
+}
+.voteView-right {
+  position: absolute;
+  border-left: 2px solid #000;
+  width: 50%;
+  height: calc(100% - 20px);
+  overflow-y: hidden;
+  right: 0;
+}
+.graph-wrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+}
+.vote-button {
+  background-color: #ffa60f;
+  border-radius: 20%;
+  color: #fff;
+  display: inline-block;
+  padding: 15px;
+  margin: 15px;
+  transition: 0.4s ease all;
+}
+.vote-button:hover {
+  transform: scale(1.2, 1.2);
+}
+.user-wrapper {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 15px;
+  text-align: center;
+}
+.user-wrapper .header {
+  font-size: 2em;
+  padding-bottom: 15px;
+}
+.user-wrapper .votes-wrapper {
+  overflow-y: scroll;
+  height: 90%;
+}
+.stat {
+  font-size: 1.5em;
+  text-align: left;
+  margin-bottom: 15px;
+}
+.stat .label {
+  font-size: 0.75em;
+  color: #ffa60f;
+}
+.title-header {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 4em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.title-header a {
+  text-decoration: none;
+  color: #fff;
+}
+.edit-wrapper {
+  position: absolute;
+  bottom: 40px;
+}
+.edit-wrapper .edit-button {
+  padding: 15px;
+  margin: 15px;
+  border: 2px solid #000;
+  border-radius: 20%;
+  cursor: default;
+}
+.edit-button {
+  margin-left: 15px;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 20%;
+  padding: 5px;
+  background-color: #ffa60f;
+  cursor: default;
+  display: inline-block;
+  transition: 0.4s ease all;
+}
+.edit-button:hover {
+  transform: scale(1.2, 1.2);
+}
+.addView-wrapper input[type=text] {
+  width: 50%;
+  height: 30px;
+  margin-left: 25%;
+}
+.addView-wrapper input[type=submit] {
+  background: #ffa60f;
+  padding: 15px;
+  border-radius: 20%;
+  color: #fff;
+  font-size: 1.5em;
+}
+.addView-wrapper .header {
+  padding: 15px;
+  color: #ffa60f;
+  text-align: center;
+  font-size: 2em;
+}
+.addView-wrapper .bottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+.addView-wrapper .scroll {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  overflow-y: auto;
+}
+.option-wrapper {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.option-wrapper .text {
+  display: inline;
+}
+.option-wrapper .text:hover {
+  text-decoration: line-through;
+  cursor: default;
+}
+.remove-button {
+  position: absolute;
+  background: #ffa60f;
+  border: 2px solid #000;
+  display: inline;
+  border-radius: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 10%;
+}
+.remove-button:after {
+  font-size: 12px;
+  content: 'X';
+}
+.delete-wrapper {
+  position: absolute;
+  bottom: 20px;
+}
+.delete-wrapper .edit-button {
+  background-color: #ffa60f;
+  color: #fff;
+  padding: 15px;
+  margin: 15px;
+  border: 2px solid #000;
+  border-radius: 20%;
+  cursor: default;
+}
+.login {
+  display: inline-block;
+}
+.login img {
+  height: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  transition: 0.4s ease all;
+}
+.login img:hover {
+  transform: scale(1.2, 1.2);
+}
