@@ -73,7 +73,9 @@ router.get('/api/getVote/:id', function(req, res) {
 router.post('/api/deleteVote', function(req, res){
     var id = req.body.id;
     Vote.remove({_id: id}, function(err){
-        res.json({message: 'Deleted'})
+        Vote.find({}, function(err, docs){
+            res.send(docs);
+        })
     })
 })
 
@@ -114,7 +116,7 @@ router.post('/api/castVote', function(req, res){
     Vote.findById(id, function(err, doc){
         doc.castVote(selection);
         doc.save();
-        res.json({vote: doc.things[selection]})
+        res.send(doc)
     })
     
 });
@@ -126,7 +128,7 @@ router.post('/api/addOption', function(req, res){
     Vote.findById(id, function(err, doc){
         doc.addThing(newThing);
         doc.save();
-        res.json({doc: doc})
+        res.send(doc)
     })
     
 });
@@ -137,7 +139,7 @@ router.post('/api/deleteOption', function(req, res){
     
     Vote.findById(id, function(err, doc){
         doc.removeThing(index);
-        res.json({doc: doc})
+        res.send(doc)
     })
 })
 
@@ -147,7 +149,7 @@ router.post('/api/setUsername', function(req, res){
     
     User.findById(id, function(err, doc){
         doc.setUsername(newName);
-        res.json({doc: doc})
+        res.json(doc)
     })
 })
 
@@ -171,6 +173,22 @@ router.get('/api/idToName/:id', function(req, res){
             res.json({name: doc})
         }
     })
+});
+
+router.post('/api/deleteAccount', function(req, res){
+    var id = req.user._id;
+    
+    Vote.remove({creatorId: id}, function(err, docs){
+        
+        User.remove({_id: id}, function(err){
+            
+            User.find({}, function(err, docs){
+                
+                res.send(docs);
+            })
+        })
+    })
+    
 })
 
 return router;
